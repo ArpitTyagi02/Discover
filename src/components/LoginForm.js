@@ -5,7 +5,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './LoginForm.css';
 
 const LoginForm = () => {
-const [isLoggedIn, setLogin] = useState(false);
+const [isLoggedIn, setLogin] = useState(true);
 
 const onFinish = function onfinish(data){
     if(data.password === "123") setLogin(true);
@@ -29,20 +29,6 @@ if(isLoggedIn){
       <Form.Item
         name="username"
         validateTrigger="onSubmit"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your Username!'
-          },
-          () => ({
-            validator(_, value) {
-              if (!value || '123' === value) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error('Username doesn\'t exist!'));
-            },
-          })
-        ]}
       >
         <Input 
         style={{lineHeight: 3}} 
@@ -52,21 +38,6 @@ if(isLoggedIn){
       </Form.Item>
       <Form.Item
         name="password"
-        validateTrigger="onSubmit"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your Password!'
-          },
-          () => ({
-            validator(_, value) {
-              if (!value || '123' === value) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error('Invalid password!'));
-            },
-          })
-        ]}
       >
         <Input
           style={{lineHeight: 3}}
