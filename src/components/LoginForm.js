@@ -60,7 +60,7 @@ if(isLoggedIn){
           },
           () => ({
             validator(_, value) {
-              if (!value || 'password' === value) {
+              if (!value || '123' === value) {
                 return Promise.resolve();
               }
               return Promise.reject(new Error('Invalid password!'));
