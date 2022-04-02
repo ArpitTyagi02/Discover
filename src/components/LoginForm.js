@@ -8,7 +8,7 @@ const LoginForm = () => {
 const [isLoggedIn, setLogin] = useState(false);
 
 const onFinish = function onfinish(data){
-    if(data.password === "password") setLogin(true);
+    if(data.password === "123") setLogin(true);
 }
 
 if(isLoggedIn){

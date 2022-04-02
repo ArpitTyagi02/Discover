@@ -6,10 +6,31 @@ const PollList = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
+  // const loadMoreData = () => {
+  //   if (loading) {
+  //     return;
+  //   }
+  //   setLoading(true);
+    
+  //   fetch('http://localhost:5186/api/get', { mode: 'no-cors', method: "get"})
+  //     .then(res => {
+  //       console.log(res);
+  //       return res.json(); 
+  //     })
+  //     .then(body => {
+  //       console.log(body);
+  //       setData([...data, ...body]);
+  //       setLoading(false);
+  //     })
+  //     .catch((ex) => {
+  //       console.log(ex);
+  //       setLoading(false);
+  //     });
+  // };
 
-  useEffect(() => {
-    loadMoreData();
-  }, []);
+  // useEffect(() => {
+  //   loadMoreData();
+  // }, []);
 
   return (      
     <div
@@ -23,7 +44,7 @@ const PollList = () => {
     >
       <InfiniteScroll
         dataLength={data.length}
-        next={loadMoreData}
+        // next={loadMoreData}
         hasMore={data.length < 50}
         loader={<Skeleton avatar paragraph={{ rows: 1 }} active />}
         endMessage={<Divider plain>It is all, nothing more 🤐</Divider>}
